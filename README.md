@@ -8,6 +8,8 @@
 
 📑 [Technical Report](https://arxiv.org/pdf/2501.06781) | 📖 [Documentation](https://elizaos.github.io/eliza/) | 🎯 [Examples](https://github.com/thejoven/awesome-eliza)
 
+[a test-net live transaction made with gigabaldai chat interface](https://testnet.stellarchain.io/transactions/8cef860af9485b995631a71964e19c97633b593938b1c4b54d7d06e9f8d16b70)
+
 </div>
 
 ## 🌟 What is GigabaldAI?
