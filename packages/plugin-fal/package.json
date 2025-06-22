@@ -1,0 +1,58 @@
+{
+    "name": "@elizaos/plugin-fal",
+    "version": "0.1.0",
+    "type": "module",
+    "main": "dist/index.js",
+    "module": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "exports": {
+        "./package.json": "./package.json",
+        ".": {
+            "import": {
+                "@elizaos/source": "./src/index.ts",
+                "types": "./dist/index.d.ts",
+                "default": "./dist/index.js"
+            }
+        }
+    },
+    "files": [
+        "dist"
+    ],
+    "dependencies": {
+        "@elizaos/core": "workspace:^",
+        "@fal-ai/serverless-client": "^0.14.2",
+        "zod": "^3.22.4",
+        "tsup": "8.3.5"
+    },
+    "devDependencies": {
+        "@biomejs/biome": "1.5.3",
+        "@types/node": "^20.0.0",
+        "vitest": "^3.0.5"
+    },
+    "scripts": {
+        "build": "tsup --format esm --dts",
+        "dev": "tsup --format esm --dts --watch",
+        "test": "vitest run",
+        "lint": "biome check src/",
+        "lint:fix": "biome check --apply src/",
+        "format": "biome format src/",
+        "format:fix": "biome format --write src/"
+    },
+    "agentConfig": {
+        "pluginType": "elizaos:plugin:1.0.0",
+        "pluginParameters": {
+            "FAL_API_KEY": {
+                "type": "string",
+                "description": "FAL API key for accessing image and video generation services"
+            },
+            "FAL_IMAGE_MODEL": {
+                "type": "string",
+                "description": "FAL model name for image generation (e.g., fal-ai/flux/schnell)"
+            },
+            "FAL_VIDEO_MODEL": {
+                "type": "string",
+                "description": "FAL model name for video generation (e.g., fal-ai/luma-dream-machine)"
+            }
+        }
+    }
+}
