@@ -1,7 +1,7 @@
-# gigabaldai llm powered crypto currency influencer (Eliza framework) 🤖
+# GigabaldAI - AI Influencer Agency Platform 🤖
 
 <div align="center">
-  <img src="./docs/static/img/eliza_banner.jpg" alt="Eliza Banner" width="100%" />
+  <img src="./docs/static/img/eliza_banner.jpg" alt="GigabaldAI Banner" width="100%" />
 </div>
 
 <div align="center">
@@ -10,203 +10,196 @@
 
 </div>
 
-## 🌍 README Translations
+## 🌟 What is GigabaldAI?
 
-[中文说明](i18n/readme/README_CN.md) | [日本語の説明](i18n/readme/README_JA.md) | [한국어 설명](i18n/readme/README_KOR.md) | [Persian](i18n/readme/README_FA.md) | [Français](i18n/readme/README_FR.md) | [Português](i18n/readme/README_PTBR.md) | [Türkçe](i18n/readme/README_TR.md) | [Русский](i18n/readme/README_RU.md) | [Español](i18n/readme/README_ES.md) | [Italiano](i18n/readme/README_IT.md) | [ไทย](i18n/readme/README_TH.md) | [Deutsch](i18n/readme/README_DE.md) | [Tiếng Việt](i18n/readme/README_VI.md) | [עִברִית](i18n/readme/README_HE.md) | [Tagalog](i18n/readme/README_TG.md) | [Polski](i18n/readme/README_PL.md) | [Arabic](i18n/readme/README_AR.md) | [Hungarian](i18n/readme/README_HU.md) | [Srpski](i18n/readme/README_RS.md) | [Română](i18n/readme/README_RO.md) | [Nederlands](i18n/readme/README_NL.md) | [Ελληνικά](i18n/readme/README_GR.md)
+GigabaldAI is a comprehensive **AI Influencer Agency Platform** built on the Eliza OS framework. It combines the power of AI agents with modern Web3 technologies to create, manage, and deploy AI influencers for marketing, community building, and brand engagement.
 
-## 🚩 Overview
+### Key Features
 
-<div align="center">
-  <img src="./docs/static/img/eliza_diagram.png" alt="Eliza Diagram" width="100%" />
-</div>
+-   🎭 **AI Influencer Management** - Create and manage diverse AI personalities with specialized expertise
+-   🔗 **Multi-Platform Integration** - Deploy agents on Discord, X (Twitter), Telegram, and Web
+-   🎨 **Visual Interface** - Beautiful card-based UI for browsing and interacting with AI influencers
+-   💼 **Web3 Native** - Built-in support for blockchain integrations, DeFi, NFTs, and crypto marketing
+-   🚀 **Extensible Architecture** - Plugin system for adding new capabilities and integrations
+-   💬 **Real-time Chat** - Advanced chat interface with TTS, file uploads, and multimedia support
 
-## ✨ Features
+## 🏗️ Architecture Overview
 
--   🛠️ Full-featured Discord, X (Twitter) and Telegram connectors
--   🔗 Support for every model (Llama, Grok, OpenAI, Anthropic, Gemini, etc.)
--   👥 Multi-agent and room support
--   📚 Easily ingest and interact with your documents
--   💾 Retrievable memory and document store
--   🚀 Highly extensible - create your own actions and clients
--   📦 Just works!
+### Core Components
 
-## Video Tutorials
-
-[AI Agent Dev School](https://www.youtube.com/watch?v=ArptLpQiKfI&list=PLx5pnFXdPTRzWla0RaOxALTSTnVq53fKL)
-
-## 🎯 Use Cases
-
--   🤖 Chatbots
--   🕵️ Autonomous Agents
--   📈 Business Process Handling
--   🎮 Video Game NPCs
--   🧠 Trading
+1. **Agent Runtime** (`/agent`) - Core AI agent system powered by Eliza OS
+2. **Client Interface** (`/client`) - React-based chat and management interface
+3. **VibeAgent** (`/VibeAgent`) - Work in progress specialized UI for AI influencer discovery and interaction
+4. **Plugin Ecosystem** (`/packages`) - Modular plugins for various Web3 integrations
 
 ## 🚀 Quick Start
 
 ### Prerequisites
 
--   [Python 2.7+](https://www.python.org/downloads/)
 -   [Node.js 23+](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 -   [pnpm](https://pnpm.io/installation)
+-   [Python 2.7+](https://www.python.org/downloads/)
 
-> **Note for Windows Users:** [WSL 2](https://learn.microsoft.com/en-us/windows/wsl/install-manual) is required.
-
-### Use the Starter (Recommended for Agent Creation)
-
-Full steps and documentation can be found in the [Eliza Starter Repository](https://github.com/elizaOS/eliza-starter).
-
-```bash
-git clone https://github.com/elizaos/eliza-starter.git
-cd eliza-starter
-cp .env.example .env
-pnpm i && pnpm build && pnpm start
-```
-
-### Manually Start Eliza (Only recommended for plugin or platform development)
-
-#### Checkout the latest release
+### Installation
 
 ```bash
 # Clone the repository
-git clone https://github.com/elizaos/eliza.git
+git clone https://github.com/your-org/gigabaldai.git
+cd gigabaldai
 
-# This project iterates fast, so we recommend checking out the latest release
-git checkout $(git describe --tags --abbrev=0)
-# If the above doesn't checkout the latest release, this should work:
-# git checkout $(git describe --tags `git rev-list --tags --max-count=1`)
-```
+# Install dependencies
+pnpm install
 
-If you would like the sample character files too, then run this:
-
-```bash
-# Download characters submodule from the character repos
-git submodule update --init
-```
-
-#### Edit the .env file
-
-Copy .env.example to .env and fill in the appropriate values.
-
-```
-cp .env.example .env
-```
-
-Note: .env is optional. If you're planning to run multiple distinct agents, you can pass secrets through the character JSON
-
-#### Start Eliza
-
-```bash
-pnpm i
+# Build all packages
 pnpm build
+```
+
+### Environment Setup
+
+```bash
+# Copy environment template
+cp .env.example .env
+
+# Edit .env file with your API keys:
+# OpenRouter Configuration
+OPENROUTER_API_KEY=your_openrouter_api_key_here
+OPENROUTER_MODEL=google/gemini-2.5-flash-preview
+
+# Stellar Configuration
+STELLAR_PRIVATE_KEY=your_stellar_private_key_here
+STELLAR_NETWORK=testnet
+
+# Fal.ai Configuration
+FAL_API_KEY=your_fal_ai_api_key_here
+FAL_IMAGE_MODEL=fal-ai/flux/schnell
+FAL_VIDEO_MODEL=fal-ai/luma-dream-machine
+
+# Twitter Configuration (optional)
+TWITTER_DRY_RUN=false
+TWITTER_USERNAME=your_twitter_username_here
+TWITTER_PASSWORD=your_twitter_password_here
+TWITTER_EMAIL=your_twitter_email_here
+# - Other service API keys as needed like
+```
+
+### Start the Agent
+
+```bash
+# Start the main AI agent
 pnpm start
 
-# The project iterates fast, sometimes you need to clean the project if you are coming back to the project
-pnpm clean
+# Or start with debug logging
+pnpm start:debug
 ```
 
-### Interact via Browser
-
-Once the agent is running, you should see the message to run "pnpm start:client" at the end.
-
-Open another terminal, move to the same directory, run the command below, then follow the URL to chat with your agent.
+### Start the Client Interface
 
 ```bash
+# In a new terminal, start the web client
 pnpm start:client
 ```
 
-Then read the [Documentation](https://elizaos.github.io/eliza/) to learn how to customize your Eliza.
-
----
-
-### Automatically Start Eliza
-
-The start script provides an automated way to set up and run Eliza:
+### Start VibeAgent (AI Influencer UI)
 
 ```bash
-sh scripts/start.sh
+# In a new terminal, start VibeAgent
+cd VibeAgent
+pnpm dev
 ```
 
-For detailed instructions on using the start script, including character management and troubleshooting, see our [Start Script Guide](./docs/docs/guides/start-script.md).
+## 🔧 Development
 
-> **Note**: The start script handles all dependencies, environment setup, and character management automatically.
-
----
-
-### Modify Character
-
-1. Open `packages/core/src/defaultCharacter.ts` to modify the default character. Uncomment and edit.
-
-2. To load custom characters:
-    - Use `pnpm start --characters="path/to/your/character.json"`
-    - Multiple character files can be loaded simultaneously
-3. Connect with X (Twitter)
-    - change `"clients": []` to `"clients": ["twitter"]` in the character file to connect with X
-
----
-
-### Add more plugins
-
-1. run `npx elizaos plugins list` to get a list of available plugins or visit https://elizaos.github.io/registry/
-
-2. run `npx elizaos plugins add @elizaos-plugins/plugin-NAME` to install the plugin into your instance
-
-#### Additional Requirements
-
-You may need to install Sharp. If you see an error when starting up, try installing it with the following command:
+### Project Structure
 
 ```
-pnpm install --include=optional sharp
+gigabaldai/
+├── agent/                 # Main AI agent wrapper
+├── client/                # React chat interface
+├── VibeAgent/            # AI influencer discovery UI
+├── packages/             # Core packages and plugins
+│   ├── core/            # Eliza OS core
+│   ├── adapter-sqlite/   # SQLite vector storage
+│   ├── plugin-*/        # Various Web3 plugins
+│   └── client-*/        # Platform clients
+├── docs/                # Documentation site
+└── scripts/             # Build and utility scripts
 ```
 
----
+### Available Scripts
 
-### Start Eliza with Gitpod
-
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/elizaos/eliza/tree/main)
-
----
-
-### Deploy Eliza in one click
-
-Use [Fleek](https://fleek.xyz/eliza/) to deploy Eliza in one click. This opens Eliza to non-developers and provides the following options to build your agent:
-
-1. Start with a template
-2. Build characterfile from scratch
-3. Upload pre-made characterfile
-
-Click [here](https://fleek.xyz/eliza/) to get started!
-
----
-
-### Community & contact
-
--   [GitHub Issues](https://github.com/elizaos/eliza/issues). Best for: bugs you encounter using Eliza, and feature proposals.
--   [elizaOS Discord](https://discord.gg/elizaos). Best for: hanging out with the elizaOS technical community
--   [DAO Discord](https://discord.gg/ai16z). Best for: hanging out with the larger non-technical community
-
-## Citation
-
-We now have a [paper](https://arxiv.org/pdf/2501.06781) you can cite for the Eliza OS:
-
-```bibtex
-@article{walters2025eliza,
-  title={Eliza: A Web3 friendly AI Agent Operating System},
-  author={Walters, Shaw and Gao, Sam and Nerd, Shakker and Da, Feng and Williams, Warren and Meng, Ting-Chien and Han, Hunter and He, Frank and Zhang, Allen and Wu, Ming and others},
-  journal={arXiv preprint arXiv:2501.06781},
-  year={2025}
-}
+```bash
+pnpm build             # Build all packages
+pnpm dev               # Start development mode
+pnpm start             # Start the agent
+pnpm start:client      # Start web client
+pnpm test              # Run test suite
+pnpm clean             # Clean build artifacts
 ```
 
-## Contributors
+### Plugin Development
 
-<a href="https://github.com/elizaos/eliza/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=elizaos/eliza" alt="Eliza project contributors" />
-</a>
+Create new plugins to extend functionality:
 
-## Star History
+```bash
+# Create a new plugin
+cd packages
+mkdir plugin-your-feature
+# Follow the plugin template structure
+```
 
-[![Star History Chart](https://api.star-history.com/svg?repos=elizaos/eliza&type=Date)](https://star-history.com/#elizaos/eliza&Date)
+## 🌐 Supported Integrations
+
+### Blockchain Networks
+
+-   **Stellar** - Native integration for payments and smart contracts
+-   **MultiversX** - Multi-chain DeFi operations
+-   **Solana** - High-performance blockchain integration
+-   **Ethereum** - EVM-compatible smart contracts
+
+### AI & Media Services
+
+-   **FAL.ai** - Advanced image and video generation
+-   **OpenRouter** - LLM models for conversation
+
+### Social Platforms
+
+-   **Twitter/X** - Automated posting and engagement
+
+### Additional Services
+
+-   **Web Search** - Real-time information retrieval via Tavily
+-   **Vector Storage** - SQLite-based memory and embeddings
+
+## 🎯 Use Cases
+
+-   **Brand Marketing** - Deploy AI influencers to promote products and services
+-   **Community Management** - Automate engagement and support in Web3 communities
+-   **Content Creation** - Generate marketing content, articles, and social media posts
+-   **DeFi Education** - Provide expertise on blockchain technology and protocols
+-   **NFT Promotion** - Market and explain NFT collections and digital art
+-   **Trading Analysis** - Offer market insights and investment guidance
+
+## 🤝 Contributing
+
+We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
+
+### Development Setup
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/your-feature`
+3. Make your changes
+4. Run tests: `pnpm test`
+5. Submit a pull request
+
+## 📚 Documentation
+
+For detailed documentation, visit our [documentation site](https://elizaos.github.io/eliza/) or check the `/docs` directory.
+
+### Key Resources
+
+-   [PROJECT_OVERVIEW.md](PROJECT_OVERVIEW.md) - Detailed technical overview
+-   [integration-plan.md](integration-plan.md) - VibeAgent integration roadmap
+-   [Character Configuration](packages/core/src/defaultCharacter.ts) - Agent personality setup
 
 ## 🛠️ System Requirements
 
@@ -214,58 +207,26 @@ We now have a [paper](https://arxiv.org/pdf/2501.06781) you can cite for the Eli
 
 -   CPU: Dual-core processor
 -   RAM: 4GB
--   Storage: 1GB free space
--   Internet connection: Broadband (1 Mbps+)
+-   Storage: 2GB free space
+-   Internet: Broadband connection
 
-### Software Requirements
+### Recommended
 
--   Python 2.7+ (3.8+ recommended)
--   Node.js 23+
--   pnpm
--   Git
+-   CPU: Quad-core processor
+-   RAM: 8GB+
+-   GPU: For local LLM models (optional)
+-   Storage: 5GB+ for full development setup
 
-### Optional Requirements
+## 📄 License
 
--   GPU: For running local LLM models
--   Additional storage: For document storage and memory
--   Higher RAM: For running multiple agents
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 📁 Project Structure
+## 🙏 Acknowledgments
 
-```
-eliza/
-├── packages/
-│   ├── core/           # Core Eliza functionality
-│   ├── clients/        # Client implementations
-│   └── actions/        # Custom actions
-├── docs/              # Documentation
-├── scripts/           # Utility scripts
-└── examples/          # Example implementations
-```
+Built on the powerful [Eliza OS](https://github.com/elizaos/eliza) framework. Special thanks to the ElizaOS community for creating such an extensible AI agent platform.
 
-## 🤝 Contributing
+## 🔗 Links
 
-We welcome contributions! Here's how you can help:
-
-### Getting Started
-
-1. Fork the repository
-2. Create a new branch: `git checkout -b feature/your-feature-name`
-3. Make your changes
-4. Run tests: `pnpm test`
-5. Submit a pull request
-
-### Types of Contributions
-
--   🐛 Bug fixes
--   ✨ New features
--   📚 Documentation improvements
--   🌍 Translations
--   🧪 Test improvements
-
-### Code Style
-
--   Follow the existing code style
--   Add comments for complex logic
--   Update documentation for changes
--   Add tests for new features
+-   [ElizaOS Discord](https://discord.gg/elizaos) - Technical community
+-   [DAO Discord](https://discord.gg/ai16z) - Broader community discussions
+-   [GitHub Issues](https://github.com/your-org/gigabaldai/issues) - Bug reports and feature requests
